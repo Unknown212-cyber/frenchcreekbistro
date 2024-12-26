@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>French Creek Bistro</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="French Creek Bistro - A cozy restaurant and grill offering breakfast, lunch, and dinner with fresh ingredients and a welcoming atmosphere.">
+<meta name="keywords" content="French Creek Bistro, Restaurant, Grill, Breakfast, Lunch, Dinner, Parksville">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+  body,h1,h5 {font-family: "Raleway", sans-serif}
+  body, html {height: 100%}
+  .bgimg {
+    background-image: url('onepage_restaurant.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .w3-display-middle {
+      font-size: 24px; /* Adjust title size for smaller screens */
+      text-align: center;
+    }
+    .w3-container {
+      padding: 10px;
+    }
+    .w3-xlarge, .w3-large {
+      font-size: 16px; /* Adjust font size for smaller screens */
+    }
+  }
+  @media (max-width: 480px) {
+    .w3-jumbo {
+      font-size: 20px; /* Further reduce title size for very small screens */
+    }
+    .w3-input {
+      padding: 12px; /* Increase padding for touch devices */
+    }
+  }
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("ASzY_cBspeHhg5ZUh"); // Replace with your EmailJS public key
+    })();
+
+    function sendEmail(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      const formData = new FormData(event.target);
+
+      const message = `
+      Name: ${formData.get("Name")}
+      Email: ${formData.get("Email")}
+      People: ${formData.get("People")}
+      Date: ${formData.get("date")}
+      Message: ${formData.get("Message")}
+    `;
+
+    const emailParams = {
+      message, // Include the nicely formatted message
+    };
+
+      emailjs
+        .send("service_1dymnkn", "template_dstm0fb", emailParams) // Replace with your EmailJS IDs
+        .then(
+          () => {
+            alert("Email sent successfully!");
+          },
+          (error) => {
+            console.error("Failed to send email:", error);
+            alert("Failed to send email. Please try again.");
+          }
+        );
+    }
+  </script>
+</head>
+<body>
+
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle w3-jumbo" id="title">
+    <p>French Creek Bistro Restaurant & Grill</p>
+  </div>
+  <div class="w3-display-topleft w3-container w3-xlarge">
+    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">menu</button></p>
+    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">contact</button></p>
+  </div>
+  <div class="w3-display-bottomleft w3-container">
+    <p class="w3-xlarge">Monday - Saturday 8AM-3PM | 4PM-7:30PM</p>
+    <p class="w3-large">894 Wembley Rd Parksville, Qualicum Beach</p>
+    <p class="w3-xlarge">250 586 7467</p>
+  </div>
+</div>
+
+<!-- Menu Modal -->
+<div id="menu" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black w3-display-container">
+      <span onclick="document.getElementById('menu').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>All Day BreakFast</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Breakfast Special <b>$12.95</b></h5>
+      <h5>The Canadian <b>$13.95</b></h5>
+      <h5>French Toast <b>$14.95</b></h5>
+      <h5>Western Omelette <b>$15.95</b></h5>
+      <h5>Hungry Fisherman <b>$17.95</b></h5>
+      <h5>Egg Delight <b>$11.95</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Something Light Bites</h1>
+    </div>
+    <div class="w3-container">
+      <h5>One Egg, Hashbrowns, Toast <b>$8.55</b></h5>
+      <h5>Bagel With Cream Cheese <b>$4.55</b></h5>
+      <h5>Bacon(3 Pieces) <b>$4.95</b></h5>
+      <h5>Sausage(3 Pieces) <b>$4.95</b></h5>
+      <h5>Nutella Toast <b>$3.95</b></h5>
+      <h5>Ham(3 Pieces) <b>$4.95</b></h5>
+      <h5>Hashbrowns <b>$4.55</b></h5>
+      <h5>Toast(2 Pieces) <b>$3.55</b></h5>
+      <h5>1 Egg <b>$1.95</b></h5>
+      <h5>Breakfast Sandwich <b>$8.55</b></h5>
+      <h5>Special Muffin <b>$3.95</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Soups</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Special Soup of the Day(Bowl) <b>$8.55</b></h5>
+      <h5>Cup of Soup <b>$5.55</b></h5>
+      <h5>Chilli Concarne With a Bun <b>$8.55</b></h5>
+      <h5>Gulasch Soup With a Bun <b>$8.55</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Salads</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Tossed Salad <b>$9.55</b></h5>
+      <h5>Half Tossed Salad <b>$5.55</b></h5>
+      <h5>Caesar Salad <b>$9.95</b></h5>
+      <h5>Caesar Salad <b>$6.55</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Sandwichs</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Roast Beef <b>$9.55</b></h5>
+      <h5>Roast Pork <b>$8.55</b></h5>
+      <h5>Black Forest Ham <b>$8.95</b></h5>
+      <h5>Turkey <b>$9.55</b></h5>
+      <h5>Special Egg Salad <b>$8.55</b></h5>
+      <p><strong>Served With Mayonnaise, Mustard, Lettuce, Tomato and Cucumber</strong></p>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Hot Sandwichs</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Grilled Cheese <b>$11.95</b></h5>
+      <h5>Baron of Beef Dip <b>$15.95</b></h5>
+      <h5>Club House <b>$15.95</b></h5>
+      <h5>BLT <b>$14.95</b></h5>
+      <p><strong>Served With French Fries or Cup of Daily Soup</strong></p>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Burgers</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Bistro Burger With French Fries <b>$16.95</b></h5>
+      <p><strong>Fully Loaded With Bacon, Cheese and Mushrooms</strong></p>
+      <h5>Crispy Chicken Burger with French Fries <b>$16.95</b></h5>
+      <p><strong>All Bugers Dressed With Lettuce, Tomato, Onions, Mayonnaise and Mustard</strong></p>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Lunch Specials</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Fish & Chips <b>$15.95</b></h5>
+      <h5>Hunter Schnitzel <b>$16.55</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Sides</h1>
+    </div>
+    <div class="w3-container">
+      <h5>French Fries <b>$7.95</b></h5>
+      <h5>Gravy <b>$2.55</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Dinner Appetizers</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Chicken Wings(8 Pieces) <b>$12.95</b></h5>
+      <h5>Bread Pakora <b>$8.95</b></h5>
+      <h5>Egg Pakora <b>$9.55</b></h5>
+      <h5>Chicken Nuggets(10 Pieces) <b>$10.95</b></h5>
+      <h5>Samosa <b>$5.95</b></h5>
+      <h5>Nacho Mix <b>$9.95</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Dinner Dishes</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Butter Chicken With Rice or Naan <b>$21.95</b></h5>
+      <h5>Egg Butter Masala With Rice or Naan <b>$20.95</b></h5>
+      <h5>Tofu Butter Masala With Rice or Naan <b>$20.55</b></h5>
+      <h5>Chicken Kadaai With Rice or Naan <b>$22.95</b></h5>
+      <h5>Egg Kadaai With Rice or Naan <b>$21.95</b></h5>
+      <h5>Tofu Kadaai With Rice or Naan <b>$21.95</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Dinner Rice Dishes</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Vegetable Biryani <b>$16.95</b></h5>
+      <h5>Chicken Biryani <b>$17.95</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Bread</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Naan / Butter Naan <b>$2.95</b></h5>
+      <h5>Garlic Naan / Garlic Butter Naan <b>$3.25</b></h5>
+      <h5>Tavaa Roti / Butter Tavaa Roti <b>$3.55</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Desserts</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Ice Cream <b>$4.95</b></h5>
+      <h5>Ice Cream Bar <b>$3.95</b></h5>
+      <h5>Gulab Jamun w/Ice Cream <b>$3.95 / $5.95</b></h5>
+      <h5>Gulab Jamun Shake <b>$5.95</b></h5>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div id="contact" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Contact</h1>
+    </div>
+    <div class="w3-container">
+      <p>Reserve a table, ask for today's special or just send us a message:</p>
+      <p>Call: 250 586 7467</p>
+      <form id="emailForm" onsubmit="sendEmail(event)">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="email" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+        <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

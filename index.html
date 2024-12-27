@@ -39,6 +39,88 @@
       padding: 12px; /* Increase padding for touch devices */
     }
   }
+  .popup-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .popup-content {
+      position: relative;
+      margin: 10% auto;
+      padding: 20px;
+      background: white;
+      max-width: 400px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: slideDown 0.5s ease-in-out;
+    }
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .popup-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .popup-content h1 {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 0;
+      font-weight: 700;
+    }
+    .popup-content p {
+      font-size: 1rem;
+      color: #666;
+      margin: 10px 0 20px;
+    }
+    .popup-content a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ff6f61;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: background 0.3s ease;
+    }
+    .popup-content a:hover {
+      background: #e65b50;
+    }
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      font-size: 3.5rem;
+      color: #999;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .popup-close:hover {
+      color: #333;
+    }
 </style>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
@@ -78,7 +160,29 @@
   </script>
 </head>
 <body>
-
+  <div id="popupModal" class="popup-modal">
+    <div class="popup-content">
+      <span class="popup-close" onclick="closePopup()">&times;</span>
+      <img src="cool-image.webp" alt="French Creek Bistro">
+      <h1>Welcome to French Creek Bistro!</h1>
+      <p>Want to order? Call us at <strong>250-585-7467</strong></p>
+      <a href="tel:2505857467">Call Now</a>
+    </div>
+  </div>
+  
+  <script>
+    // Show the popup modal when the page loads
+    window.onload = function() {
+      document.getElementById("popupModal").style.display = "block";
+    };
+  
+    // Close the popup modal
+    function closePopup() {
+      document.getElementById("popupModal").style.display = "none";
+      document.body.style.overflow = "auto"; // Re-enable scrolling
+    }
+  </script>
+  
 <div class="bgimg w3-display-container w3-text-white">
   <div class="w3-display-middle w3-jumbo" id="title">
     <p>French Creek Bistro Restaurant & Grill</p>
@@ -144,7 +248,7 @@
       <h5>Caesar Salad <b>$6.55</b></h5>
     </div>
     <div class="w3-container w3-black">
-      <h1>Sandwiches</h1>
+      <h1>Sandwichs</h1>
     </div>
     <div class="w3-container">
       <h5>Roast Beef <b>$9.55</b></h5>
@@ -155,7 +259,7 @@
       <p><strong>Served With Mayonnaise, Mustard, Lettuce, Tomato and Cucumber</strong></p>
     </div>
     <div class="w3-container w3-black">
-      <h1>Hot Sandwiches</h1>
+      <h1>Hot Sandwichs</h1>
     </div>
     <div class="w3-container">
       <h5>Grilled Cheese <b>$11.95</b></h5>

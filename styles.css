@@ -1,0 +1,381 @@
+/* General Utility Classes */
+body, h1, h4 { font-family: "Raleway"; }
+body, html { 
+  height: 100%; 
+  margin: 0; /* Remove default margin */
+  overflow: hidden; /* Disable scrolling */
+}
+
+.bgimg {
+  background-image: url('onepage_restaurant.jpg'); /* Your image URL */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  width: 100%; /* Ensures the element takes up the full width */
+  height: 100vh; /* Ensures the element takes up the full height of the viewport */
+  position: fixed; /* Fixes the background image */
+  top: 0;
+  left: 0;
+}
+
+.popup-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-content {
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  background: white;
+  max-width: 400px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.popup-content h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+  font-weight: 700;
+}
+
+.popup-content p {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 0 20px;
+}
+
+.popup-content a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff6f61;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
+.popup-content a:hover {
+  background: #e65b50;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 3.5rem;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.popup-close:hover {
+  color: #333;
+}
+
+/* Modal */
+.w3-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.w3-modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s;
+}
+
+.w3-display-topright {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* W3 Modal Content */
+.w3-modal-content {
+  margin: auto;
+  background-color: #fff;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  width: 600px; /* Default width for desktop */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .w3-modal-content {
+      width: 500px; /* Smaller width for tablets */
+  }
+}
+
+/* Further adjustment for very small screens */
+@media (max-width: 600px) {
+  .w3-modal-content {
+      width: auto; /* Auto width for small mobile screens */
+      margin: 0 10px;
+  }
+}
+
+/* Larger screens (tablets and above) */
+@media (min-width: 993px) {
+  .w3-modal-content {
+      width: 900px; /* Larger width for desktop screens */
+  }
+}
+
+/* Zoom Animation */
+.w3-animate-zoom {
+  animation: w3-zoom 0.4s;
+}
+
+@keyframes w3-zoom {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Container */
+.w3-container {
+  padding: 16px; /* Adds padding inside the container */
+  margin: 0; /* Removes any default margin */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width/height */
+}
+
+/* Black Background */
+.w3-black {
+  background-color: #000000; /* Black background color */
+  color: white; /* White text color to ensure readability */
+}
+
+/* Display Container */
+.w3-display-container {
+  position: relative; /* Allows absolute positioning of child elements */
+  display: block; /* Ensures the container behaves as a block element */
+}
+
+/* Button Styles */
+.w3-button {
+  display: inline-block; /* Makes the button inline */
+  padding: 8px 16px; /* Adds padding inside the button */
+  margin: 4px 2px; /* Adds margin around the button */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+  text-align: center; /* Centers text inside the button */
+  text-decoration: none; /* Removes underline from links */
+  background-color: black; /* Default black background */
+  color: white; /* White text color */
+  border: none; /* Removes the border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 30px; /* Default font size */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.w3-button:hover {
+  background-color: #424242; /* Darker background when hovered */
+}
+
+/* Display Top Right */
+.w3-display-topright {
+  position: absolute; /* Positions the element relative to its nearest positioned ancestor */
+  top: 0; /* Aligns the element to the top */
+  right: 0; /* Aligns the element to the right */
+}
+
+/* Large Font Size */
+.w3-large {
+  font-size: 18px; /* Increases the font size */
+}
+
+/* White Text */
+.w3-text-white {
+  color: white; /* Sets the text color to white */
+}
+
+/* Display Middle */
+.w3-display-middle {
+  position: absolute; /* Position the element absolutely within the parent */
+  top: 50%; /* Position the element at the vertical center */
+  left: 50%; /* Position the element at the horizontal center */
+  transform: translate(-50%, -50%); /* Adjust the element's position to be perfectly centered */
+}
+
+/* Jumbo Font */
+.w3-jumbo {
+  font-size: 4em; /* Makes the font size very large */
+  font-weight: bold; /* Makes the text bold */
+}
+
+/* Display Top Left */
+.w3-display-topleft {
+  position: absolute; /* Position the element absolutely within the parent */
+  top: 0; /* Align the element to the top */
+  left: 0; /* Align the element to the left */
+}
+
+/* Large Font Size */
+.w3-xlarge {
+  font-size: 1.5em; /* Increases font size to 1.5 times the normal size */
+}
+
+/* Display Bottom Left */
+.w3-display-bottomleft {
+  position: absolute; /* Position the element absolutely within the parent */
+  bottom: 0; /* Align the element to the bottom */
+  left: 0; /* Align the element to the left */
+}
+
+/* Modal Styles */
+.w3-modal {
+  display: none; /* Initially hidden */
+  position: fixed; /* Fixed position to cover the entire screen */
+  z-index: 1; /* Ensures the modal is above other content */
+  left: 0; /* Align to the left of the screen */
+  top: 0; /* Align to the top of the screen */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+}
+
+/* Input Fields */
+.w3-input {
+  width: 100%; /* Full width of the parent container */
+  padding: 8px; /* Padding inside the input */
+  font-size: 16px; /* Font size for the input text */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+  background-color: #fff; /* White background */
+  color: #333; /* Text color */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.w3-input:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  outline: none; /* Remove default outline */
+}
+
+.w3-padding-16 {
+  padding: 16px; /* 16px padding on all sides */
+}
+
+.w3-border {
+  border: 1px solid #ccc; /* Light gray border */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  /* Adjustments for Tablets */
+  .w3-container {
+    padding: 8px; /* Less padding on smaller devices */
+  }
+
+  .w3-jumbo {
+    font-size: 3em; /* Smaller jumbo font size */
+  }
+
+  .w3-large {
+    font-size: 1.2em; /* Smaller large font size */
+  }
+
+  .w3-xlarge {
+    font-size: 1.3em; /* Smaller large font size */
+  }
+
+  .w3-modal-content {
+    width: 90%; /* Ensure modal content fits well on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjustments for Mobile Devices */
+  .w3-jumbo {
+    font-size: 2.5em; /* Smaller jumbo font size for mobile */
+  }
+
+  .w3-large {
+    font-size: 1.1em; /* Smaller large font size for mobile */
+  }
+  
+  .w3-xlarge {
+    font-size: 1.2em; /* Smaller large font size */
+  }
+
+  .w3-modal-content {
+    width: 95%; /* Ensure modal content fits well on mobile */
+  }
+}
+.w3-sendButton {
+  display: inline-block; /* Makes the button inline */
+  padding: 8px 16px; /* Adds padding inside the button */
+  margin: 4px 2px; /* Adds margin around the button */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+  text-align: center; /* Centers text inside the button */
+  text-decoration: none; /* Removes underline from links */
+  background-color: black; /* Default black background */
+  color: white; /* White text color */
+  border: none; /* Removes the border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 20px; /* Default font size */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  justify-content: center;
+}

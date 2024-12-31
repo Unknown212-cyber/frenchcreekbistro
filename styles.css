@@ -3,7 +3,6 @@ body, h1, h4 { font-family: "Raleway"; }
 body, html { 
   height: 100%; 
   margin: 0; /* Remove default margin */
-  overflow: hidden; /* Disable scrolling */
 }
 
 .bgimg {

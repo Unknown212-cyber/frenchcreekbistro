@@ -3,6 +3,7 @@ body, h1, h4 { font-family: "Raleway"; }
 body, html { 
   height: 100%; 
   margin: 0; /* Remove default margin */
+  /* overflow: hidden; Disable scrolling */
 }
 
 .bgimg {
@@ -377,4 +378,38 @@ body, html {
   font-size: 20px; /* Default font size */
   transition: background-color 0.3s ease; /* Smooth transition for background color */
   justify-content: center;
+}
+
+.social-icons {
+  transition: transform 0.3s ease;
+}
+/* 
+@media (max-width: 768px) {
+  .social-icons {
+    width: 30px;
+    height: 30px;
+  }
+} */
+
+.social-icons a {
+  margin-right: 15px;
+  margin-left: 15px;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+#facebook-icon:hover {
+  color: #1381e7; /* Highlight color on hover */
+}
+#instagram-icon:hover {
+  color: #ee0b4b; /* Highlight color on hover */
+}
+.social-icons:hover {
+  transform: scale(1.2);
+}
+.w3-display-bottomright {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }

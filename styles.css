@@ -3,6 +3,7 @@ body, h1, h4 { font-family: "Raleway"; }
 body, html { 
   height: 100%; 
   margin: 0; /* Remove default margin */
+  /* margin-top: 40px; */
   /* overflow: hidden; Disable scrolling */
 }
 
@@ -102,13 +103,13 @@ body, html {
   top: 10px;
   right: 30px;
   font-size: 3.5rem;
-  color: #999;
+  color: #595757;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .popup-close:hover {
-  color: #333;
+  color: #0e0e0e;
 }
 
 /* Modal */
@@ -381,24 +382,28 @@ body, html {
 }
 
 .social-icons {
+  display: flex; /* Ensures icons are aligned horizontally */
+  justify-content: center; /* Centers the icons */
+  gap: 30px; /* Adds uniform spacing between icons */
   transition: transform 0.3s ease;
 }
-/* 
-@media (max-width: 768px) {
-  .social-icons {
-    width: 30px;
-    height: 30px;
-  }
-} */
 
 .social-icons a {
-  margin-right: 15px;
-  margin-left: 15px;
   font-size: 24px;
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
+@media (max-width: 768px) {
+  .social-icons {
+    width: auto; /* Adjusts width for responsiveness */
+    height: auto; /* Keeps height dynamic */
+    gap: 15px; /* Reduces spacing for smaller screens */
+  }
+}
+
+
 #facebook-icon:hover {
   color: #1381e7; /* Highlight color on hover */
 }

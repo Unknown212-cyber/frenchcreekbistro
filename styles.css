@@ -411,5 +411,5 @@ body, html {
 .w3-display-bottomright {
   position: absolute;
   right: 0;
-  bottom: -2;
+  bottom: 0;
 }

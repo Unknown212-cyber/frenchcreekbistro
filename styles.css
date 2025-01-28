@@ -103,7 +103,7 @@ body, html {
   top: 10px;
   right: 30px;
   font-size: 3.5rem;
-  color: #595757;
+  color: white;
   cursor: pointer;
   transition: color 0.3s ease;
 }
